@@ -20,6 +20,7 @@ export class ReactiveFormComponent {
     this.MyForm.get('password').valueChanges.subscribe((value:any) => {
       console.log(value);
     });
+
     
   }
   

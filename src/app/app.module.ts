@@ -9,6 +9,7 @@ import { ApiComponentComponent } from './api-component/api-component.component';
 import {HttpClientModule} from '@angular/common/http';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component'
 import { ReactiveFormsModule } from '@angular/forms';
+import { TaskFormComponent } from './task-form/task-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsTempComponent,
     MformComponent,
     ApiComponentComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    TaskFormComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule, ReactiveFormsModule

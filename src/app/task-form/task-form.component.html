@@ -1,0 +1,23 @@
+<form class="mx-5 my-5" [formGroup]="MyForm" (ngSubmit)="getFormData()">
+    <div class="mb-3 mt-3">
+        <label for="name">Email</label>
+        <input type="text" id="email" name="email" formControlName="email" class="form-control">
+        <small class="text-danger" *ngIf="MyForm.get('email').touched && MyForm.get('email').invalid">Please enter a valid email</small>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" formControlName="password" class="form-control">
+        <small class="text-danger" *ngIf="MyForm.get('password').touched && MyForm.get('password').invalid">Please enter a valid password</small>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <label for="cpassword">Confirm password</label>
+        <input type="password" id="cpassword" name="cpassword" formControlName="cpassword" class="form-control">
+        <small class="text-danger" *ngIf="MyForm.get('cpassword').touched && match">Password doesn't match</small>
+    </div>
+
+    <div class="mb-3 mt-3">
+        <input type="submit" id="save" name="save"  class="btn btn-success">
+    </div>
+</form>
