@@ -1,0 +1,31 @@
+.main-form{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(237, 237, 198); */
+}
+
+.button{
+    margin: 10px;
+    margin-left: 125px;
+    background-color: rgb(46, 109, 164);
+    border: 1px solid rgb(122, 122, 73);
+    color: white;
+}
+
+.button:hover{
+    background-color: rgb(226, 226, 237);
+}   
+
+input{
+    margin: 10px 0px 10px 30px;
+    border: 1px solid rgb(212, 223, 190);
+}
+
+.cardForm{
+    background-color: rgb(210, 224, 239);
+    padding: 20px 40px;
+    border-radius: 5px;
+}

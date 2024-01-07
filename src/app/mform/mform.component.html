@@ -1,0 +1,39 @@
+<div class="main-form">
+<div class="cardForm">
+    <form #myform="ngForm" (ngSubmit)="getForm(myform)">
+        <div>
+            <label for="name">Name: </label> <br>
+            <input type="text" id="name" name="name" required="true" #name="ngModel" ngModel><br>
+            <small *ngIf="name.touched && name.invalid">Please enter name</small>
+        </div>
+
+        <div>
+            <label for="surname">Surname: </label> <br>
+            <input type="text" id="surname" name="surname" required="true" #surname="ngModel" ngModel><br>
+            <small *ngIf="surname.touched && surname.invalid">Please enter surname</small>
+        </div>
+
+        <div>
+            <label for="age">Age: </label> <br>
+            <input type="number" id="age" name="age" required="true" #age="ngModel" ngModel><br>
+            <small *ngIf="age.touched && age.invalid">Please enter age</small>
+        </div>
+
+        <div>
+            <label for="education">Education: </label> <br>
+            <input type="text" id="education" name="education" required="true" #education="ngModel" ngModel><br>
+            <small *ngIf="education.touched && education.invalid">Please enter education</small>
+        </div>
+
+        <div>
+            <label for="address">Address: </label> <br>
+            <input type="text" id="address" name="address" required="true" #address="ngModel" ngModel><br>
+            <small *ngIf="address.touched && address.invalid">Please enter address</small>
+        </div>
+
+        <div>
+            <input type="submit" value="Submit" class="button" [disabled]="myform.invalid">
+        </div>
+    </form>
+</div>
+</div>

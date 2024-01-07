@@ -1,0 +1,35 @@
+<form #myForm="ngForm" (ngSubmit)="getData(myForm)">
+<table class="mx-5 mt-4">
+    <thead>
+        <tr>
+            <th>User Id</th>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let element of data">
+            <td>
+                <input type="text" placeholder={{element.userId}} value={{element.userId}} class="form-control" id="userId" name="userId" #userId="ngModel" ngModel>
+            </td>
+            <td>
+                <input type="text" placeholder={{element.id}} value={{element.id}} class="form-control" id="id" name="id" #id="ngModel" ngModel>
+            </td>
+            <td>
+                <input type="text" placeholder={{element.title}} value={{element.title}} class="form-control" id="title" name="title" #title="ngModel" ngModel>
+            </td>
+            <td>
+                <input type="text" placeholder={{element.body}} value={{element.body}} class="form-control" id="body" name="body" #body="ngModel" ngModel>
+            </td>
+            <td>
+                <input type="submit" value="Save" class="form-control" class="btn btn-primary">
+            </td>
+
+        </tr>
+
+    </tbody>
+</table>
+</form>
