@@ -2,11 +2,13 @@
     <div class="mb-3 mx-5">
         <label for="email">Email</label>
         <input type="text" id="email" name="email" class="form-control" formControlName="email">
+        <small class="text-danger" *ngIf="MyForm.get('email').touched && MyForm.get('email').invalid">Please enter a valid email id</small>
     </div>
 
     <div class="mb-3 mx-5">
         <label for="password">Password</label>
         <input type="password" id="password" name="password" class="form-control" formControlName="password">
+        <small class="text-danger" *ngIf="MyForm.get('password').touched && MyForm.get('password').invalid">Please enter a password</small>
     </div>
 
     <div class="mb-3 mx-5">

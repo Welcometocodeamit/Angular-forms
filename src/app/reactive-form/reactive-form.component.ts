@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
@@ -11,10 +11,18 @@ export class ReactiveFormComponent {
 
   ngOnInit():void{
     this.MyForm=new FormGroup({
-      'email':new FormControl(''),
-      'password': new FormControl('')
+      'email':new FormControl('', [Validators.email, Validators.required, Validators.minLength(5)]),
+      'password': new FormControl('', [Validators.required, Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$'
+      )
+      ])
     })
+
+    this.MyForm.get('password').valueChanges.subscribe((value:any) => {
+      console.log(value);
+    });
+    
   }
+  
 
   getFormData(){
     alert(
