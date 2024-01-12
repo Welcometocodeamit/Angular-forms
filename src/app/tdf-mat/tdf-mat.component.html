@@ -1,0 +1,24 @@
+<div class="container mx-5 my-5">
+    <div class="main">
+
+        <div>
+            <h3>Templete driven form</h3>
+        </div>
+
+        <form #myForm="ngForm"> 
+
+            <mat-form-field>
+                <mat-label>Enter your name</mat-label>
+                <input matInput type="text"  name="name" id="name" #name="ngModel" ngModel required>
+                <mat-error *ngIf="name.touched && name.invalid" >Please enter name</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Enter your email</mat-label>
+                <input matInput placeholder="pat@example.com" name="email" id="email" #email="ngModel" ngModel required>
+                <mat-error *ngIf="email.touched && email.invalid" >Please enter a valid email</mat-error>
+            </mat-form-field>
+        
+        </form>    
+    </div>
+</div>

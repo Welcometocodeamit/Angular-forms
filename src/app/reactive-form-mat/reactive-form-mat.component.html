@@ -1,0 +1,93 @@
+<div class="container mx-5 my-5">
+
+    <form  [formGroup]="form" (ngSubmit)="onFormSumbit()">
+        <div class="container">
+            <mat-form-field>
+                <mat-label>Name</mat-label>
+                <input type="text" matInput id="name" formControlName="name" >
+            </mat-form-field><br>
+            <small *ngIf="form.get('name').touched && form.get('name').invalid">*Name is required</small>
+        </div>
+
+        <div class="container">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput id="email" name="email" formControlName="email">
+            </mat-form-field>
+            <small *ngIf="form.get('email').touched && form.get('email').invalid">*Email is invalid</small>
+        </div>
+
+        <div class="container mt-1 mb-3">
+            <label>Gender</label>&nbsp;
+            <input type="radio" value="male" id="male" name="gender" formControlName="gender">&nbsp;
+            <label for="male">Male</label>&nbsp;
+            <input type="radio" value="female" id="female" name="gender" formControlName="gender">&nbsp;
+            <label for="female">Female</label>&nbsp;
+        </div>
+
+    <div class="location container mx-3" formGroupName="location">
+        <div class="container">
+            <mat-form-field>
+                <mat-label>Address</mat-label>
+                <textarea matInput formControlName="address"> </textarea>
+               
+            </mat-form-field>
+            <small *ngIf="form.get('location').get('address').touched && form.get('location.address').invalid">*Address cant be empty</small>
+        </div>
+
+        <!-- <div class="container">
+            <mat-form-field>
+                <mat-label>Postal</mat-label>
+                <input matInput type="text" name="postal" id="postal" formControlName="postal">
+            </mat-form-field>
+            <small *ngIf=" form.get('location.postal').touched && form.get('location.postal').errors">Postal not found</small>
+        </div>
+
+        <div class="container">
+            <mat-form-field>
+                <mat-label>Post office</mat-label>
+                <input matInput type="text" name="po" id="po" formControlName="po" [value]="post">
+            </mat-form-field>
+        </div> -->
+
+
+        <div>
+            <mat-form-field>
+                <mat-label>Country</mat-label>
+                <mat-select formControlName="country">
+                  <mat-option value="India">India</mat-option>
+                  <mat-option value="Japan">Japan</mat-option>
+                  <mat-option value="Russia">Russia</mat-option>
+                </mat-select>
+              </mat-form-field>
+        </div>
+    </div>
+
+        <div class="container">
+            <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker" formControlName="date">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+        </div>
+
+        <div class="containar" formArrayName="skills" style="display: flex; flex-direction: column; gap: 10px;">
+            <label for="skills">Skills</label><br>
+            <input type="text"  placeholder="add skill." *ngFor="let control of form.get('skills')['controls']; let i = index" [formControlName]="i"><br>
+            <button type="button" (click)="addSkill()">Add skills</button>
+            <button type="button" (click)="deleteSkill()">delete skills</button>
+        </div>
+
+        <div class="container mt-3">
+            <!-- <mat-form-field> -->
+                <input type="submit" value="Submit">
+            <!-- </mat-form-field> -->
+        </div>
+    </form>
+
+</div>
+
+
+<!--  [disabled]="!form.valid -->

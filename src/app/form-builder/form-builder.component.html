@@ -1,0 +1,39 @@
+<form  [formGroup]="form" (ngSubmit)="onFormSumbit()">
+    <div class="container">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input type="text" matInput id="name" formControlName="name" >
+        </mat-form-field><br>
+        <small *ngIf="form.get('name').touched && form.get('name').invalid">*Name is required</small>
+    </div>
+
+    <div class="container">
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="email" matInput id="email" name="email" formControlName="email">
+        </mat-form-field>
+        <small *ngIf="form.get('email').touched && form.get('email').invalid">*Email is invalid</small>
+    </div>
+
+    <div class="container">
+        <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input type="password" matInput id="password" name="password" formControlName="password">
+        </mat-form-field>
+        <small *ngIf="form.get('password').touched && form.get('password').invalid">*Password is invalid</small>
+    </div>
+
+    <div class="container mt-1 mb-3">
+        <label>Gender</label>&nbsp;
+        <input type="radio" value="male" id="male" name="gender" formControlName="gender">&nbsp;
+        <label for="male">Male</label>&nbsp;
+        <input type="radio" value="female" id="female" name="gender" formControlName="gender">&nbsp;
+        <label for="female">Female</label>&nbsp;
+    </div>
+
+    <div class="container mt-3">
+        <!-- <mat-form-field> -->
+            <input type="submit" value="Submit">
+        <!-- </mat-form-field> -->
+    </div>
+</form>
